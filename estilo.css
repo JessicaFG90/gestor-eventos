@@ -1,0 +1,348 @@
+/* === RESET Y BASE === */
+/* Elimina márgenes, rellenos y asegura que el tamaño incluya bordes */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI';
+    font-weight: 300;
+    /* Fondo degradado pastel cálido: melocotón → amarillo mantequilla → rosa palo */
+    background: linear-gradient(135deg, #ffd6b3 0%, #fff1c2 40%, #ffc8d8 100%);
+    min-height: 100vh;
+    color: #2d2d2d;
+}
+
+/* === ENCABEZADO === */
+.encabezado {
+    /* Cristal cálido pastel: rosa frambuesa muy suavizado con transparencia */
+    background: rgba(220, 130, 160, 0.45);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    color: white; /* Texto blanco para contraste sobre el fondo rosado */
+    padding: 24px 32px;
+    text-align: center;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.18);
+}
+
+.titulo-app {
+    font-size: 40px;
+    font-weight: 600px;
+    letter-spacing: 1px;
+}
+
+/* === LAYOUT PRINCIPAL === */
+/* Contenedor flex horizontal que separa el formulario del panel de eventos */
+.contenido-principal {
+    display: flex;
+    gap: 32px;
+    padding: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Ancho fijo para el panel lateral del formulario */
+.panel-formulario {
+    flex: 0 0 340px;
+}
+
+/* El panel de eventos ocupa el espacio restante */
+.panel-eventos {
+    flex: 1;
+}
+
+/* === PANEL FORMULARIO (efecto cristal pastel) === */
+.panel-formulario {
+    background: rgba(255, 255, 255, 0.40);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.60);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 8px 32px rgba(230, 150, 120, 0.15);
+}
+
+/* Etiquetas de los campos del formulario */
+label {
+    display: block;
+    font-weight: 600;
+    margin: 14px 0 5px;
+    font-size: 15px;
+    color: #b5606a;
+    letter-spacing: 0.4px;
+}
+
+/* Estilos base para todos los campos de entrada */
+input, textarea, select {
+    font-family: 'Segoe UI';
+    width: 100%;
+    padding: 10px 12px;
+    background: rgba(255, 250, 240, 0.70);
+    border: 1px solid rgba(255, 190, 155, 0.50);
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-family: inherit;
+    color: #2d2d2d;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Estado foco: resalta el campo activo con rosa pastel */
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #e8889a;
+    box-shadow: 0 0 0 3px rgba(232, 136, 154, 0.20);
+    background: rgba(255, 250, 240, 0.95);
+}
+
+/* Clase para marcar campos con error de validación */
+.input-error {
+    border-color: #e8909a !important; /* Rosa salmón pastel para errores */
+    box-shadow: 0 0 0 3px rgba(232, 144, 154, 0.20) !important;
+}
+
+/* Texto del mensaje de error bajo el campo */
+.error-msg {
+    color: #c0606a;
+    font-size: 12px;
+    display: block;
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+/* === BOTÓN PRINCIPAL === */
+.btn-primario {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px;
+    background: linear-gradient(135deg, #e8a0b0, #f4b8a0);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: inherit;
+    letter-spacing: 0.5px;
+    /* Sombra de profundidad en tono rosado pastel */
+    box-shadow: 0 4px 15px rgba(220, 140, 150, 0.40);
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+/* Efecto hover: el botón sube ligeramente */
+.btn-primario:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 140, 150, 0.55);
+}
+
+/* Efecto clic: el botón vuelve a su posición */
+.btn-primario:active {
+    transform: translateY(0);
+}
+
+/* === BOTONES DE TARJETA === */
+/* Estilos compartidos entre el botón de favorito y el de eliminar */
+.btn-favorito, .btn-eliminar {
+    padding: 6px 13px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+    font-weight: 600;
+    margin-right: 8px;
+    margin-top: 12px;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+/* Botón favorito: amarillo mantequilla pastel */
+.btn-favorito {
+    background: rgba(255, 243, 190, 0.80);
+    color: #c49a30; /* Dorado suave para el texto */
+    border-color: rgba(255, 220, 130, 0.65);
+}
+
+/* Botón eliminar: rosa salmón pastel */
+.btn-eliminar {
+    background: rgba(255, 215, 215, 0.80);
+    color: #c06060; /* Rojo rosado suave */
+    border-color: rgba(240, 170, 170, 0.65);
+}
+
+/* Hover compartido: ligero desplazamiento y sombra sutil */
+.btn-favorito:hover, .btn-eliminar:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+}
+
+/* === TARJETA DE EVENTO (efecto cristal pastel cálido) === */
+.tarjeta-evento {
+    /* Fondo glassmorphism con blanco muy transparente */
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.60);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 16px;
+    /* Sombra en tono melocotón muy suave */
+    box-shadow: 0 4px 20px rgba(220, 150, 120, 0.12);
+    /* Acento izquierdo en rosa pastel */
+    border-left: 4px solid rgba(220, 140, 160, 0.70);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover: la tarjeta flota ligeramente */
+.tarjeta-evento:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(220, 150, 120, 0.20);
+}
+
+/* Estado favorito: fondo amarillo mantequilla y acento dorado */
+.es-favorito {
+    border-left-color: #f56aa4; /* Dorado pastel */
+    background: rgba(220, 255, 243, 0.55);
+    box-shadow: 0 4px 20px rgba(245, 200, 80, 0.20);
+}
+
+/* Título principal de cada tarjeta de evento */
+.evento-titulo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #b56070; /* Rosa oscuro legible */
+    margin-bottom: 6px;
+}
+
+/* Fecha del evento en tono tierra rosado suave */
+.evento-fecha {
+    font-size: 14px;
+    color: #9c7878;
+    margin-bottom: 5px;
+}
+
+/* Badge de categoría: fondo rosa muy pálido */
+.evento-categoria {
+    background: rgba(255, 210, 220, 0.75);
+    color: #a05060; /* Rosa frambuesa pastel */
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    border: 1px solid rgba(220, 160, 170, 0.30);
+}
+
+/* Descripción del evento con espaciado cómodo para lectura */
+.evento-descripcion {
+    margin: 10px 0 14px;
+    font-size: 14px;
+    color: #7a5858; /* Marrón rosado suave */
+    line-height: 1.5;
+}
+
+/* Animación de salida al eliminar una tarjeta */
+.desapareciendo {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.3s;
+}
+
+/* === BARRA DE BÚSQUEDA Y CONTADOR === */
+/* Fila horizontal con campo de texto y selector de categoría */
+.barra-busqueda {
+    display: flex;
+    gap: 13px;
+    margin-bottom: 19px;
+}
+
+/* El input ocupa todo el espacio libre */
+.barra-busqueda input {
+    flex: 1;
+}
+
+/* El select tiene un ancho fijo razonable */
+.barra-busqueda select {
+    flex: 0 0 150px;
+}
+
+/* Texto informativo con el número de eventos mostrados */
+.contador-eventos {
+    color: rgba(130, 80, 80, 0.80); /* Marrón rosado pastel */
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
+}
+
+/* === NOTIFICACIÓN FLOTANTE === */
+/* Posición fija en la esquina inferior derecha, fuera de pantalla por defecto */
+.notificacion {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    padding: 13px 20px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+    /* Estado inicial: invisible y desplazada hacia abajo */
+    opacity: 0;
+    transform: translateY(16px);
+    /* La transición maneja tanto la entrada como la salida */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* Evita que interfiera con clicks cuando está oculta */
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* Clase que se añade/quita con JS para mostrar u ocultar */
+.notificacion--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Variante: evento creado */
+.notificacion--exito {
+    background: rgba(210, 245, 210, 0.85);
+    color: #3a7a4a;
+    border-color: rgba(160, 220, 160, 0.60);
+}
+
+/* Variante: evento eliminado */
+.notificacion--eliminar {
+    background: rgba(250, 159, 159, 0.726);
+    color: #a04040;
+    border-color: rgba(223, 132, 132, 0.801);
+}
+
+/* Variante: favorito */
+.notificacion--favorito {
+    background: rgba(255, 243, 190, 0.85);
+    color: #8a6a10;
+    border-color: rgba(255, 220, 130, 0.60);
+}
+
+/* === RESPONSIVO (pantallas < 768px) === */
+@media (max-width: 768px) {
+    /* En móvil el layout pasa a columna vertical */
+    .contenido-principal {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    /* El formulario ocupa el ancho completo */
+    .panel-formulario {
+        flex: none;
+        width: 100%;
+    }
+
+    /* La barra de búsqueda también apila sus elementos */
+    .barra-busqueda {
+        flex-direction: column;
+    }
+}
