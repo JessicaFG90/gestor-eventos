@@ -85,4 +85,4 @@ index.html   →   Abrir con Live Server (VS Code) o doble clic
 
 ## 🎓 Contexto académico
 
-> Proyecto Final de la asignatura **Lenguaje de Marcas** · 1º DAM · Ucademy · 2025/2026
+> Proyecto Final de la asignatura **Lenguaje de Marcas** · 1º DAM · 2025/2026
