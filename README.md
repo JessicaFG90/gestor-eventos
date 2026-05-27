@@ -1,4 +1,4 @@
-# 🗓️ Gestor de Eventos — Proyecto Final Lenguaje de Marcas
+# 🗓️ Gestor de Eventos
 
 Proyecto final de **HTML, CSS y JavaScript** desarrollado en el módulo de **Lenguaje de Marcas** (1º DAM · Curso 2025/2026).
 
