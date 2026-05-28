@@ -10,7 +10,7 @@ Aplicación web de tipo **SPA (Single Page Application)** para gestionar eventos
 
 El diseño aplica **glassmorphism** con una paleta de colores pastel cálidos y es totalmente responsive.
 
-[![Ver Demo](https://img.shields.io/badge/Ver%20Demo-%23000000?style=for-the-badge&logo=vercel&logoColor=white)](https://gestor-eventos-lemon-one.vercel.app)
+<a href="https://gestor-eventos-lemon-one.vercel.app/" target="_blank"><img src="https://img.shields.io/badge/🚀%20VER%20DEMO-ff69b4?style=for-the-badge" alt="Ver Demo"/></a>
 
 ---
 
